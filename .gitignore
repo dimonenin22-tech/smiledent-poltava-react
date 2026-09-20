@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build artifacts
+dist/
+dist-ssr/
+
+# Environment & logs
+*.log
+*.tmp
+.env
+.env.local
+.DS_Store
+Thumbs.db
+desktop.ini
