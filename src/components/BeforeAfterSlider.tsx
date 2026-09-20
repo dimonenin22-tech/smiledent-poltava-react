@@ -3,59 +3,60 @@ import { Sparkles, ArrowLeftRight, CheckCircle2 } from 'lucide-react';
 
 interface ClinicalCase {
   id: string;
+  tabName: string;
   title: string;
   category: string;
   doctor: string;
   description: string;
   beforeImg: string;
   afterImg: string;
+  aspectClass: string;
 }
 
 const casesData: ClinicalCase[] = [
   {
     id: 'case_01',
-    title: 'Дентальна імплантація MegaGen та цирконієві коронки',
-    category: 'Хірургія та імплантація',
-    doctor: 'Хірург-імплантолог Скрипник В.М.',
-    description: 'Відновлення відсутніх зубів жувальної групи. Встановлено імпланти MegaGen AnyRidge з негайним навантаженням та високоточними коронками з діоксиду цирконію.',
-    beforeImg: 'assets/before_after/01_implant_megagen_before.jpg',
-    afterImg: 'assets/before_after/01_implant_megagen_after.jpg',
+    tabName: 'Жувальний моляр',
+    title: 'Анатомічна реставрація жувального моляра світлополімером',
+    category: 'Терапія та реставрація',
+    doctor: 'Лікар-стоматолог Семененко В.І.',
+    description: 'Безболісне препарування глибокого карієсу фісур під кофердамом. Анатомічне моделювання жувальної поверхні світлополімерним нанокомпозитом з індивідуальним відтворенням фісурного рельєфу та природного відтінку.',
+    beforeImg: 'assets/before_after/case_01_molar_before.jpg',
+    afterImg: 'assets/before_after/case_01_molar_after.jpg',
+    aspectClass: 'aspect-[16/9] sm:aspect-[21/9] min-h-[240px] sm:min-h-[320px]',
   },
   {
     id: 'case_02',
-    title: 'Виправлення прикусу та вирівнювання зубного ряду',
-    category: 'Ортодонтія',
-    doctor: 'Стоматолог-ортодонт Скрипник Є.В.',
-    description: 'Корекція скупченості зубів та глибокого прикусу керамічною брекет-системою. Досягнуто правильної оклюзії та гармонійної форми посмішки.',
-    beforeImg: 'assets/before_after/02_braces_ortho_before.jpg',
-    afterImg: 'assets/before_after/02_braces_ortho_after.jpg',
+    tabName: 'Різці (зона посмішки)',
+    title: 'Художня естетична реставрація контактних поверхонь різців',
+    category: 'Естетична стоматологія',
+    doctor: 'Лікар-стоматолог Семененко В.І.',
+    description: 'Лікування контактного апроксимального карієсу в зоні посмішки. Оптична інтеграція композиту в природну емаль, створення щільного міжзубного контакту з міжзубним клином та дзеркальне полірування.',
+    beforeImg: 'assets/before_after/case_02_front_before.jpg',
+    afterImg: 'assets/before_after/case_02_front_after.jpg',
+    aspectClass: 'aspect-[16/9] sm:aspect-[21/9] min-h-[240px] sm:min-h-[320px]',
   },
   {
     id: 'case_03',
-    title: 'Естетичні керамічні вініри E.max',
-    category: 'Ортопедія та естетика',
+    tabName: 'Премоляри та моляр',
+    title: 'Комплексне лікування карієсу фісур премолярів та моляра',
+    category: 'Терапевтична стоматологія',
     doctor: 'Лікар-стоматолог Васильєва І.І.',
-    description: 'Малоінвазивна підготовка та фіксація тонкостінних керамічних вінірів у зоні посмішки. Закриття діастеми, вирівнювання кольору та створення сяючої білизни.',
-    beforeImg: 'assets/before_after/03_ceramic_veneers_before.jpg',
-    afterImg: 'assets/before_after/03_ceramic_veneers_after.jpg',
+    description: 'Усунення пігментованих каріозних уражень жувальної групи верхньої щелепи. Формування природного макро- та мікрорельєфу з повним збереженням здорових тканин зуба та герметизацією фісур.',
+    beforeImg: 'assets/before_after/case_03_premolars_before.jpg',
+    afterImg: 'assets/before_after/case_03_premolars_after.jpg',
+    aspectClass: 'aspect-[4/3] sm:aspect-[16/11] min-h-[300px] sm:min-h-[420px]',
   },
   {
     id: 'case_04',
-    title: 'Художня композитна реставрація фронтальних зубів',
-    category: 'Терапія та реставрація',
+    tabName: 'Відновлення зуба',
+    title: 'Функціональне відновлення зруйнованої коронки зуба',
+    category: 'Ендодонтія та реставрація',
     doctor: 'Лікар-стоматолог Семененко В.І.',
-    description: 'Відновлення анатомічної форми та прозорості ріжучого краю після сколу. Використано наногібридний композит з ідеальною інтеграцією у природну емаль.',
-    beforeImg: 'assets/before_after/04_aesthetic_restoration_before.jpg',
-    afterImg: 'assets/before_after/04_aesthetic_restoration_after.jpg',
-  },
-  {
-    id: 'case_05',
-    title: 'Комплексна гігієна Air-Flow та зняття зубного каменю',
-    category: 'Профілактика та гігієна',
-    doctor: 'Клінічний терапевт клініки',
-    description: "Ультразвукове зняття над'ясенних і під'ясенних відкладень, порошкоструминна обробка Air-Flow дрібнодисперсним гліцином та глибоке полірування емалі.",
-    beforeImg: 'assets/before_after/05_hygiene_airflow_before.jpg',
-    afterImg: 'assets/before_after/05_hygiene_airflow_after.jpg',
+    description: 'Очищення та медикаментозна обробка порожнини під ізоляцією клампом B5. Пошарова полімеризація та функціональне відновлення анатомії коронки моляра високоміцним нанокомпозитом.',
+    beforeImg: 'assets/before_after/case_04_deep_molar_before.jpg',
+    afterImg: 'assets/before_after/case_04_deep_molar_after.jpg',
+    aspectClass: 'aspect-[3/2] sm:aspect-[16/10] min-h-[280px] sm:min-h-[400px]',
   },
 ];
 
@@ -120,7 +121,7 @@ export const BeforeAfterSlider: React.FC = () => {
                   : 'bg-white text-slate-600 hover:bg-slate-200/80 border border-slate-200/80'
               }`}
             >
-              Кейс {idx + 1}: {item.category.split(' ')[0]}
+              Кейс {idx + 1}: {item.tabName}
             </button>
           ))}
         </div>
@@ -150,7 +151,7 @@ export const BeforeAfterSlider: React.FC = () => {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
-            className="relative w-full h-[320px] sm:h-[440px] md:h-[500px] rounded-2xl overflow-hidden select-none touch-none cursor-ew-resize bg-slate-900 ring-1 ring-slate-200 shadow-inner"
+            className={`relative w-full ${activeCase.aspectClass} rounded-2xl overflow-hidden select-none touch-none cursor-ew-resize bg-slate-900 ring-1 ring-slate-200 shadow-inner`}
           >
             {/* UNDER LAYER: AFTER (ПІСЛЯ) - 100% width/height, object-fit: cover */}
             <img
@@ -216,6 +217,7 @@ export const BeforeAfterSlider: React.FC = () => {
               {activeCase.description}
             </p>
           </div>
+
         </div>
       </div>
     </section>
