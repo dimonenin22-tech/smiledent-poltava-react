@@ -22,7 +22,7 @@ export async function sendLeadToTelegram(lead: TelegramLeadPayload): Promise<boo
     `━━━━━━━━━━━━━━━━━━`,
     `🔑 <b>ID заявки:</b> <code>${leadId}</code>`,
     `👤 <b>Пацієнт:</b> ${escapeHtml(lead.patientName)}`,
-    `📞 <b>Телефон:</b> <a href="tel:${rawDigits}">${escapeHtml(lead.phone)}</a>`,
+    `📞 <b>Телефон:</b> <code>${escapeHtml(lead.phone)}</code>`,
     `📋 <b>Послуга / Лікар:</b> ${escapeHtml(lead.topic)}`,
     `⏰ <b>Бажаний час:</b> ${escapeHtml(lead.preferredTime)}`,
     `📍 <b>Джерело:</b> ${escapeHtml(lead.source || 'Онлайн-запис на сайті')}`,
@@ -32,8 +32,8 @@ export async function sendLeadToTelegram(lead: TelegramLeadPayload): Promise<boo
 
   const inlineKeyboard = [
     [
-      { text: '📞 Зателефонувати', url: `tel:+${rawDigits}` },
-      { text: '💬 Написати в Telegram', url: `https://t.me/+${rawDigits}` }
+      { text: '💬 Написати в Telegram', url: `https://t.me/+${rawDigits}` },
+      { text: '📱 WhatsApp', url: `https://wa.me/${rawDigits}` }
     ]
   ];
 
