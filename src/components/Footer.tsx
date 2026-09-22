@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, Heart } from 'lucide-rea
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-400 text-sm pt-16 pb-24 md:pb-12 border-t border-slate-800">
+    <footer className="bg-neutral-950 text-neutral-400 text-sm pt-16 pb-24 md:pb-12 border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand & About */}
@@ -13,21 +13,21 @@ export const Footer: React.FC = () => {
               <img
                 src="./assets/avatar.jpg"
                 alt={clinicInfo.shortName}
-                className="w-12 h-12 rounded-2xl object-cover ring-2 ring-teal-500/30"
+                className="w-12 h-12 rounded-2xl object-cover ring-2 ring-neutral-700 shadow-md"
               />
               <div>
                 <span className="font-display font-bold text-xl text-white block">
-                  Смайл <span className="text-teal-400">Дент</span>
+                  Смайл <span className="text-amber-400">Дент</span>
                 </span>
-                <span className="text-xs text-slate-400 block">
+                <span className="text-xs text-neutral-400 block">
                   Стоматологія щасливих посмішок
                 </span>
               </div>
             </div>
-            <p className="text-xs leading-relaxed text-slate-400">
+            <p className="text-xs leading-relaxed text-neutral-400">
               Сучасна клініка безболісної стоматології у Полтаві. Ультразвукова хірургія, імплантація MegaGen, вирівнювання прикусу та естетичне протезування.
             </p>
-            <div className="flex items-center gap-2 text-xs text-teal-400 font-semibold pt-1">
+            <div className="flex items-center gap-2 text-xs text-amber-400 font-semibold pt-1">
               <ShieldCheck className="w-4 h-4" />
               <span>100% стерильність за протоколами МОЗ</span>
             </div>
@@ -40,37 +40,37 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <a href="#hero" className="hover:text-teal-400 transition">
+                <a href="#hero" className="hover:text-amber-400 transition">
                   Головна
                 </a>
               </li>
               <li>
-                <a href="#advantages" className="hover:text-teal-400 transition">
+                <a href="#advantages" className="hover:text-amber-400 transition">
                   Переваги та технології
                 </a>
               </li>
               <li>
-                <a href="#team" className="hover:text-teal-400 transition">
+                <a href="#team" className="hover:text-amber-400 transition">
                   Команда лікарів
                 </a>
               </li>
               <li>
-                <a href="#cases" className="hover:text-teal-400 transition">
+                <a href="#cases" className="hover:text-amber-400 transition">
                   Кейси «До та Після»
                 </a>
               </li>
               <li>
-                <a href="#prices" className="hover:text-teal-400 transition">
+                <a href="#prices" className="hover:text-amber-400 transition">
                   Офіційний прайс-лист
                 </a>
               </li>
               <li>
-                <a href="#reviews" className="hover:text-teal-400 transition">
+                <a href="#reviews" className="hover:text-amber-400 transition">
                   Відгуки пацієнтів
                 </a>
               </li>
               <li>
-                <a href="#contacts" className="hover:text-teal-400 transition">
+                <a href="#contacts" className="hover:text-amber-400 transition">
                   Контакти та локація
                 </a>
               </li>
@@ -84,24 +84,24 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>{clinicInfo.address}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <a href={`tel:${clinicInfo.phones[0]}`} className="hover:text-teal-400">
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <a href={`tel:${clinicInfo.phones[0]}`} className="hover:text-amber-400">
                   {clinicInfo.phoneFormatted}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <a href={`tel:${clinicInfo.phones[1]}`} className="hover:text-teal-400">
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <a href={`tel:${clinicInfo.phones[1]}`} className="hover:text-amber-400">
                   {clinicInfo.phoneSecondaryFormatted}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-teal-400 shrink-0" />
-                <a href={`mailto:${clinicInfo.email}`} className="hover:text-teal-400">
+                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                <a href={`mailto:${clinicInfo.email}`} className="hover:text-amber-400">
                   {clinicInfo.email}
                 </a>
               </li>
@@ -114,23 +114,23 @@ export const Footer: React.FC = () => {
               Графік прийому
             </h4>
             <div className="space-y-2 text-xs mb-4">
-              <div className="flex items-center gap-2 text-slate-300">
-                <Clock className="w-4 h-4 text-teal-400 shrink-0" />
+              <div className="flex items-center gap-2 text-neutral-200">
+                <Clock className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Пн–Сб: {clinicInfo.workingHours.weekdays}</span>
               </div>
-              <p className="text-slate-500 pl-6">
+              <p className="text-neutral-500 pl-6">
                 Неділя: {clinicInfo.workingHours.sunday}
               </p>
             </div>
 
-            <div className="pt-2 border-t border-slate-800">
-              <span className="text-xs text-slate-400 block mb-2">Ми в соцмережах:</span>
+            <div className="pt-2 border-t border-neutral-900">
+              <span className="text-xs text-neutral-400 block mb-2">Ми в соцмережах:</span>
               <div className="flex items-center gap-2">
                 <a
                   href={clinicInfo.telegram}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-white transition"
+                  className="p-2 rounded-xl bg-neutral-900 hover:bg-sky-500 hover:text-white transition border border-neutral-800"
                   title="Telegram"
                 >
                   <Send className="w-4 h-4" />
@@ -139,7 +139,7 @@ export const Footer: React.FC = () => {
                   href={clinicInfo.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2 rounded-xl bg-slate-800 hover:bg-pink-600 hover:text-white transition"
+                  className="p-2 rounded-xl bg-neutral-900 hover:bg-pink-600 hover:text-white transition border border-neutral-800"
                   title="Instagram"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© 2026 Стоматологія «Смайл Дент» (Полтава). Всі права захищено.</p>
           <div className="flex items-center gap-1">
             <span>Зроблено з</span>

@@ -30,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white flex flex-col font-sans">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-amber-500 selection:text-black flex flex-col font-sans">
       {/* Top Header & Sticky Navigation */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 

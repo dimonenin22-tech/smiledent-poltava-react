@@ -14,7 +14,7 @@ export const ShimmerButton: React.FC<ShimmerButtonProps> = ({
 }) => {
   return (
     <button
-      className={`group relative inline-flex items-center justify-center overflow-hidden rounded-2xl bg-teal-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-700/25 transition-all duration-300 hover:bg-teal-700 hover:shadow-teal-700/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${className}`}
+      className={`group relative inline-flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 px-6 py-3.5 text-base font-bold text-neutral-950 shadow-lg shadow-amber-500/25 transition-all duration-300 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${className}`}
       {...props}
     >
       {/* Moving Shimmer Beam */}

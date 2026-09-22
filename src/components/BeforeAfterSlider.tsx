@@ -90,18 +90,18 @@ export const BeforeAfterSlider: React.FC = () => {
   };
 
   return (
-    <section id="cases" className="py-20 bg-slate-100/70 relative overflow-hidden">
+    <section id="cases" className="py-20 bg-neutral-950 relative overflow-hidden text-white border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/70 border border-teal-200 text-teal-800 text-xs sm:text-sm font-semibold mb-4">
-            <Sparkles className="w-4 h-4 text-teal-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-semibold mb-4 shadow-sm">
+            <Sparkles className="w-4 h-4 text-amber-400" />
             <span>Реальні клінічні результати</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
-            Кейси пацієнтів <span className="text-teal-700">«До та Після»</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight leading-tight mb-4">
+            Кейси пацієнтів <span className="text-amber-400">«До та Після»</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-400 leading-relaxed">
             Потягніть інтерактивний повзунок вліво або вправо, щоб наочно оцінити точність та естетику лікування в нашій клініці.
           </p>
         </div>
@@ -117,8 +117,8 @@ export const BeforeAfterSlider: React.FC = () => {
               }}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                 activeCaseIndex === idx
-                  ? 'bg-teal-600 text-white shadow-md shadow-teal-600/25'
-                  : 'bg-white text-slate-600 hover:bg-slate-200/80 border border-slate-200/80'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-bold shadow-md shadow-amber-500/25'
+                  : 'bg-neutral-900 text-neutral-300 hover:bg-neutral-800 border border-neutral-800'
               }`}
             >
               Кейс {idx + 1}: {item.tabName}
@@ -127,19 +127,19 @@ export const BeforeAfterSlider: React.FC = () => {
         </div>
 
         {/* Main Interactive Slider Card */}
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-slate-200/80">
+        <div className="max-w-4xl mx-auto bg-neutral-900/90 rounded-3xl p-4 sm:p-8 shadow-2xl shadow-black/80 border border-neutral-800">
           {/* Active Case Info Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-neutral-800">
             <div>
-              <span className="text-xs font-bold text-teal-700 uppercase tracking-wider block">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
                 {activeCase.category} • {activeCase.doctor}
               </span>
-              <h3 className="text-lg sm:text-xl font-bold font-display text-slate-900">
+              <h3 className="text-lg sm:text-xl font-bold font-display text-white">
                 {activeCase.title}
               </h3>
             </div>
-            <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/60">
-              <ArrowLeftRight className="w-3.5 h-3.5 text-teal-600" />
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-neutral-400 bg-neutral-950 px-3 py-1.5 rounded-lg border border-neutral-800">
+              <ArrowLeftRight className="w-3.5 h-3.5 text-amber-400" />
               <span>Потягніть повзунок</span>
             </div>
           </div>
@@ -151,7 +151,7 @@ export const BeforeAfterSlider: React.FC = () => {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
-            className={`relative w-full ${activeCase.aspectClass} rounded-2xl overflow-hidden select-none touch-none cursor-ew-resize bg-slate-900 ring-1 ring-slate-200 shadow-inner`}
+            className={`relative w-full ${activeCase.aspectClass} rounded-2xl overflow-hidden select-none touch-none cursor-ew-resize bg-neutral-950 ring-1 ring-neutral-800 shadow-inner`}
           >
             {/* UNDER LAYER: AFTER (ПІСЛЯ) - 100% width/height, object-fit: cover */}
             <img
@@ -160,7 +160,7 @@ export const BeforeAfterSlider: React.FC = () => {
               className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
               loading="eager"
             />
-            <div className="absolute bottom-4 right-4 z-10 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm border border-white/20 pointer-events-none">
+            <div className="absolute bottom-4 right-4 z-10 bg-neutral-950/85 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm border border-neutral-700 pointer-events-none">
               ПІСЛЯ
             </div>
 
@@ -178,7 +178,7 @@ export const BeforeAfterSlider: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
                 loading="eager"
               />
-              <div className="absolute bottom-4 left-4 z-10 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm border border-white/20 pointer-events-none">
+              <div className="absolute bottom-4 left-4 z-10 bg-neutral-950/85 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm border border-neutral-700 pointer-events-none">
                 ДО
               </div>
             </div>
@@ -189,10 +189,10 @@ export const BeforeAfterSlider: React.FC = () => {
               style={{ left: `${sliderPos}%` }}
             >
               {/* Vertical divider line */}
-              <div className="absolute top-0 bottom-0 -left-0.5 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)]" />
+              <div className="absolute top-0 bottom-0 -left-0.5 w-1 bg-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.8)]" />
 
               {/* Circular Handle */}
-              <div className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-teal-700 shadow-xl border-2 border-teal-600 flex items-center justify-center">
+              <div className="absolute top-1/2 -left-5 -translate-y-1/2 w-10 h-10 rounded-full bg-neutral-950 text-amber-400 shadow-2xl border-2 border-amber-500 flex items-center justify-center">
                 <ArrowLeftRight className="w-5 h-5" />
               </div>
             </div>
@@ -210,10 +210,10 @@ export const BeforeAfterSlider: React.FC = () => {
           </div>
 
           {/* Case Clinical Notes */}
-          <div className="mt-6 p-4 rounded-2xl bg-teal-50/60 border border-teal-100 flex items-start gap-3 text-xs sm:text-sm text-slate-700">
-            <CheckCircle2 className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+          <div className="mt-6 p-4 rounded-2xl bg-neutral-950/80 border border-neutral-800/80 flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
+            <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
-              <span className="font-bold text-slate-900">Протокол виконання: </span>
+              <span className="font-bold text-white">Протокол виконання: </span>
               {activeCase.description}
             </p>
           </div>

@@ -135,20 +135,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="booking-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) handleResetAndClose();
       }}
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 overflow-hidden"
+        className="relative w-full max-w-lg bg-neutral-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-neutral-800 text-neutral-100 overflow-hidden"
       >
         {/* Close Button */}
         <button
           onClick={handleResetAndClose}
           aria-label="Закрити модальне вікно"
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
+          className="absolute top-5 right-5 p-2 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800 transition"
         >
           <X className="w-5 h-5" />
         </button>
@@ -157,14 +157,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           <div>
             {/* Modal Header */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 shadow-sm">
                 <CalendarCheck className="w-6 h-6" />
               </div>
               <div>
-                <h3 id="booking-title" className="text-xl font-bold font-display text-slate-900">
+                <h3 id="booking-title" className="text-xl font-bold font-display text-white">
                   Запис на прийом
                 </h3>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-neutral-400">
                   Стоматологія «Смайл Дент» • вул. Григорія Левченка, 2
                 </p>
               </div>
@@ -174,54 +174,54 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Patient Name */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
                   Ваше ім'я *
                 </label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     required
                     value={patientName}
                     onChange={(e) => setPatientName(e.target.value)}
                     placeholder="Наприклад: Олена або Сергій"
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder:text-neutral-600 text-sm focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition"
                   />
                 </div>
               </div>
 
               {/* Phone Input with Ukrainian Mask */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
                   Номер телефону *
                 </label>
                 <div className="relative">
-                  <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Phone className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="tel"
                     required
                     value={phone}
                     onChange={handlePhoneChange}
                     placeholder="+380 (__) ___-__-__"
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm font-medium focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition font-mono"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white placeholder:text-neutral-600 text-sm font-medium focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition font-mono"
                   />
                 </div>
-                <span className="text-[11px] text-slate-400 mt-1 block">
+                <span className="text-[11px] text-neutral-500 mt-1 block">
                   Адміністратор зателефонує для узгодження точного часу
                 </span>
               </div>
 
               {/* Service / Doctor Pre-select */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
                   Послуга або лікар
                 </label>
                 <select
                   value={selectedTopic}
                   onChange={(e) => setSelectedTopic(e.target.value)}
-                  className="w-full px-3.5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition"
+                  className="w-full px-3.5 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white text-sm focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition"
                 >
-                  <optgroup label="Рекомендовано">
+                  <optgroup label="Рекомендовано" className="bg-neutral-900 text-white">
                     <option value="Первинна консультація лікаря (300 грн)">
                       Первинна консультація лікаря (300 грн)
                     </option>
@@ -230,7 +230,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     </option>
                   </optgroup>
 
-                  <optgroup label="Лікарі клініки">
+                  <optgroup label="Лікарі клініки" className="bg-neutral-900 text-white">
                     {doctorsData.map((d) => (
                       <option key={d.id} value={`Лікар: ${d.name}`}>
                         {d.name} ({d.role})
@@ -238,7 +238,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     ))}
                   </optgroup>
 
-                  <optgroup label="Основні напрямки">
+                  <optgroup label="Основні напрямки" className="bg-neutral-900 text-white">
                     {priceCategories.map((c) => (
                       <option key={c.id} value={`Категорія: ${c.name}`}>
                         {c.name}
@@ -250,27 +250,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               {/* Preferred Time */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
                   Зручний час прийому
                 </label>
                 <div className="relative">
-                  <Clock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Clock className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <select
                     value={preferredTime}
                     onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none transition"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-white text-sm focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition"
                   >
-                    <option value="Якнайшвидше">Якнайшвидше (найближчий вільний час)</option>
-                    <option value="Перша половина дня (09:00 – 13:00)">Перша половина дня (09:00 – 13:00)</option>
-                    <option value="Друга половина дня (13:00 – 18:00)">Друга половина дня (13:00 – 18:00)</option>
-                    <option value="Субота (вихідний день)">Субота (зручно на вихідних)</option>
+                    <option value="Якнайшвидше" className="bg-neutral-900 text-white">Якнайшвидше (найближчий вільний час)</option>
+                    <option value="Перша половина дня (09:00 – 13:00)" className="bg-neutral-900 text-white">Перша половина дня (09:00 – 13:00)</option>
+                    <option value="Друга половина дня (13:00 – 18:00)" className="bg-neutral-900 text-white">Друга половина дня (13:00 – 18:00)</option>
+                    <option value="Субота (вихідний день)" className="bg-neutral-900 text-white">Субота (зручно на вихідних)</option>
                   </select>
                 </div>
               </div>
 
               {/* Error Message */}
               {errorMessage && (
-                <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+                <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-800/50 text-rose-300 text-xs font-medium">
                   {errorMessage}
                 </div>
               )}
@@ -279,11 +279,11 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 px-6 rounded-2xl bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-bold text-base shadow-lg shadow-teal-700/25 transition-all duration-200 disabled:opacity-60 cursor-pointer"
+                className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 active:scale-[0.99] text-neutral-950 font-bold text-base shadow-lg shadow-amber-500/25 transition-all duration-200 disabled:opacity-60 cursor-pointer"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span className="w-4 h-4 border-2 border-neutral-950 border-t-transparent rounded-full animate-spin" />
                     Надсилання заявки...
                   </span>
                 ) : (
@@ -295,31 +295,31 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </button>
             </form>
 
-            <p className="text-center text-[11px] text-slate-400 mt-4">
+            <p className="text-center text-[11px] text-neutral-500 mt-4">
               Натискаючи кнопку, ви даєте згоду на обробку персональних даних згідно із законодавством України.
             </p>
           </div>
         ) : (
           /* Success Screen */
           <div className="text-center py-6 animate-in zoom-in-95 duration-200">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-emerald-950/60 border border-emerald-800/50 text-emerald-400 flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
-            <h3 className="text-2xl font-bold font-display text-slate-900 mb-2">
+            <h3 className="text-2xl font-bold font-display text-white mb-2">
               Дякуємо, {patientName}!
             </h3>
-            <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+            <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
               Вашу заявку успішно зареєстровано. Адміністратор клініки «Смайл Дент» зателефонує вам на номер{' '}
-              <span className="font-bold text-slate-800">{phone}</span> протягом 15 хвилин для підтвердження часу.
+              <span className="font-bold text-amber-400">{phone}</span> протягом 15 хвилин для підтвердження часу.
             </p>
 
-            <div className="space-y-3 pt-4 border-t border-slate-100">
+            <div className="space-y-3 pt-4 border-t border-neutral-800">
               <a
                 href={clinicInfo.telegram}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm transition shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm transition shadow-sm"
               >
                 <Send className="w-4 h-4" />
                 <span>Написати адміністратору в Telegram</span>
@@ -327,15 +327,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               <a
                 href={`tel:${clinicInfo.phones[0]}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-neutral-800 bg-neutral-950/60 hover:bg-neutral-800 text-neutral-200 font-semibold text-sm transition"
               >
-                <PhoneCall className="w-4 h-4 text-teal-600" />
+                <PhoneCall className="w-4 h-4 text-amber-400" />
                 <span>Зателефонувати: {clinicInfo.phoneFormatted}</span>
               </a>
 
               <button
                 onClick={handleResetAndClose}
-                className="w-full text-xs font-semibold text-slate-400 hover:text-slate-600 pt-2"
+                className="w-full text-xs font-semibold text-neutral-400 hover:text-neutral-200 pt-2"
               >
                 Закрити вікно
               </button>

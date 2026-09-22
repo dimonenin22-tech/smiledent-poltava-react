@@ -46,18 +46,18 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
   const totalMatchesCount = filteredData.reduce((acc, cat) => acc + cat.items.length, 0);
 
   return (
-    <section id="prices" className="py-20 bg-white relative overflow-hidden">
+    <section id="prices" className="py-20 bg-neutral-950 relative overflow-hidden text-white border-t border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/70 border border-teal-200 text-teal-800 text-xs sm:text-sm font-semibold mb-4">
-            <Tag className="w-4 h-4 text-teal-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-semibold mb-4 shadow-sm">
+            <Tag className="w-4 h-4 text-amber-400" />
             <span>Прозоре ціноутворення</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 tracking-tight leading-tight mb-4">
-            Офіційний прайс-лист <span className="text-teal-700">послуг клініки</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight leading-tight mb-4">
+            Офіційний прайс-лист <span className="text-amber-400">послуг клініки</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-400 leading-relaxed">
             Повна цифрова база 9 напрямків стоматології. Вартість лікування фіксується у плані до початку процедур — без прихованих платежів.
           </p>
         </div>
@@ -65,18 +65,18 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
         {/* Live Search & Filter Bar */}
         <div className="max-w-2xl mx-auto mb-10">
           <div className="relative">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-neutral-500 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Пошук послуги (наприклад: консультація, брекети, імплант, пломба)..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200/90 text-slate-800 text-sm sm:text-base focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 transition-all outline-none"
+              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-neutral-900 border border-neutral-800 text-white placeholder:text-neutral-500 text-sm sm:text-base focus:bg-neutral-900 focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 transition-all outline-none"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400 hover:text-slate-600"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-neutral-400 hover:text-white"
               >
                 Очистити
               </button>
@@ -90,8 +90,8 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
             onClick={() => setSelectedCategoryId('all')}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
               selectedCategoryId === 'all'
-                ? 'bg-teal-600 text-white shadow-md shadow-teal-600/20'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-bold shadow-md shadow-amber-500/25'
+                : 'bg-neutral-900 text-neutral-300 hover:bg-neutral-800 border border-neutral-800'
             }`}
           >
             Всі категорії ({priceCategories.length})
@@ -102,8 +102,8 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
               onClick={() => setSelectedCategoryId(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer ${
                 selectedCategoryId === cat.id
-                  ? 'bg-teal-600 text-white shadow-md shadow-teal-600/20'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-neutral-950 font-bold shadow-md shadow-amber-500/25'
+                  : 'bg-neutral-900 text-neutral-300 hover:bg-neutral-800 border border-neutral-800'
               }`}
             >
               {cat.name}
@@ -117,14 +117,14 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
             {filteredData.map((category: PriceCategory) => (
               <div
                 key={category.id}
-                className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs"
+                className="bg-neutral-900/80 rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-xl"
               >
-                <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200/80">
-                  <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 flex items-center gap-2.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-teal-600 inline-block" />
+                <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-neutral-800">
+                  <h3 className="text-xl sm:text-2xl font-bold font-display text-white flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
                     {category.name}
                   </h3>
-                  <span className="text-xs font-semibold text-slate-500 bg-white px-3 py-1 rounded-lg border border-slate-200">
+                  <span className="text-xs font-semibold text-neutral-400 bg-neutral-950 px-3 py-1 rounded-lg border border-neutral-800">
                     {category.items.length} позицій
                   </span>
                 </div>
@@ -133,23 +133,23 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
                   {category.items.map((item: PriceItem, idx: number) => (
                     <div
                       key={idx}
-                      className="group bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/70 hover:border-teal-500/40 hover:shadow-md transition-all flex items-center justify-between gap-4"
+                      className="group bg-neutral-950/80 p-4 sm:p-5 rounded-2xl border border-neutral-800/80 hover:border-amber-500/40 hover:shadow-xl transition-all flex items-center justify-between gap-4"
                     >
                       <div className="flex-grow">
-                        <h4 className="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-teal-700 transition-colors">
+                        <h4 className="text-sm sm:text-base font-semibold text-neutral-200 group-hover:text-amber-400 transition-colors">
                           {item.title}
                         </h4>
                       </div>
 
                       <div className="flex items-center gap-3 shrink-0">
-                        <span className="font-display font-bold text-sm sm:text-base text-teal-800 bg-teal-50 px-3 py-1.5 rounded-xl border border-teal-100/80 whitespace-nowrap">
+                        <span className="font-display font-bold text-sm sm:text-base text-amber-300 bg-amber-950/50 px-3 py-1.5 rounded-xl border border-amber-500/30 whitespace-nowrap">
                           {item.price}
                         </span>
 
                         <button
                           onClick={() => onSelectService(item.title)}
                           title={`Записатися на «${item.title}»`}
-                          className="p-2 rounded-xl bg-slate-100 hover:bg-teal-600 text-slate-600 hover:text-white transition-all cursor-pointer"
+                          className="p-2 rounded-xl bg-neutral-900 hover:bg-amber-500 text-neutral-400 hover:text-neutral-950 transition-all cursor-pointer border border-neutral-800 hover:border-amber-500"
                         >
                           <Calendar className="w-4 h-4" />
                         </button>
@@ -161,12 +161,12 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
             ))}
           </div>
         ) : (
-          <div className="text-center py-16 bg-slate-50 rounded-3xl border border-slate-200 max-w-lg mx-auto">
-            <FileText className="w-12 h-12 text-slate-400 mx-auto mb-3" />
-            <p className="text-base font-semibold text-slate-700">
+          <div className="text-center py-16 bg-neutral-900/80 rounded-3xl border border-neutral-800 max-w-lg mx-auto">
+            <FileText className="w-12 h-12 text-neutral-500 mx-auto mb-3" />
+            <p className="text-base font-semibold text-white">
               Послуг за запитом «{searchQuery}» не знайдено
             </p>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-neutral-400 mt-1">
               Спробуйте інше ключове слово або перегляньте всі категорії.
             </p>
             <button
@@ -174,7 +174,7 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
                 setSearchQuery('');
                 setSelectedCategoryId('all');
               }}
-              className="mt-4 text-xs font-semibold text-teal-700 underline"
+              className="mt-4 text-xs font-semibold text-amber-400 hover:text-amber-300 underline"
             >
               Скинути фільтри
             </button>
@@ -182,15 +182,15 @@ export const ServicesPricing: React.FC<ServicesPricingProps> = ({ onSelectServic
         )}
 
         {/* Footnote Guarantee */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 bg-neutral-900/80 p-4 rounded-2xl border border-neutral-800">
           <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-teal-600 shrink-0" />
+            <Check className="w-4 h-4 text-amber-400 shrink-0" />
             <span>
               Усі ціни вказані у національній валюті (UAH) згідно з офіційним прейскурантом клініки «Смайл Дент».
             </span>
           </div>
-          <div className="flex items-center gap-1.5 font-semibold text-teal-800 shrink-0">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+          <div className="flex items-center gap-1.5 font-semibold text-amber-400 shrink-0">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Знайдено {totalMatchesCount} послуг</span>
           </div>
         </div>
